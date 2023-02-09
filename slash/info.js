@@ -2,11 +2,11 @@ const { SlashCommandBuilder } = require("@discordjs/builders")
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-	data: new SlashCommandBuilder().setName("info").setDescription("Muestra informacion sobre la cancion que se esta reproduciendo"),
+	data: new SlashCommandBuilder().setName("info").setDescription("Muestra la info sobre la rolita que se está reproduciendo."),
 	run: async ({ client, interaction }) => {
 		const queue = client.player.getQueue(interaction.guildId)
 
-		if (!queue) return await interaction.editReply("No hay canciones en la cola")
+		if (!queue) return await interaction.editReply("No hay ni una wea en la cola..")
 
 		let bar = queue.createProgressBar({
 			queue: false,
