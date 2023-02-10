@@ -8,6 +8,6 @@ module.exports = {
 		if (!queue) return await interaction.editReply("No hay ni una wea en la cola..")
 
 		queue.shuffle()
-        await interaction.editReply(`La cola de ${queue.tracks.length} canciones de ha mezclado!`)
+        await interaction.editReply(`La cola de ${queue.tracks.length} canciones se ha mezclado!`)
 	},
 }
