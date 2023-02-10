@@ -11,7 +11,7 @@ const TOKEN = process.env.TOKEN;
 
 const LOAD_SLASH = process.argv[2]=="load";
 const CLIENT_ID = "1073042132274790401";
-const GUILD_ID = "586323359525109772";
+const GUILD_ID = "384445901659176970";
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildVoiceStates] });
 

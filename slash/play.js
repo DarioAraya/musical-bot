@@ -38,7 +38,8 @@ module.exports = {
             let url = interaction.options.getString("url")
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
-                searchEngine: QueryType.YOUTUBE_VIDEO
+                searchEngine: QueryType.SPOTIFY_SONG,
+                ...(url.includes("youtu") && { searchEngine: QueryType.YOUTUBE_VIDEO })
             })
             if (result.tracks.length === 0)
                 return interaction.editReply("Sin resultados.")
@@ -51,7 +52,8 @@ module.exports = {
             let url = interaction.options.getString("url")
             const result = await client.player.search(url, {
                 requestedBy: interaction.user,
-                searchEngine: QueryType.YOUTUBE_PLAYLIST
+                searchEngine: QueryType.SPOTIFY_PLAYLIST,
+                ...(url.includes("youtu") && { searchEngine: QueryType.YOUTUBE_PLAYLIST })
             })
 
             if (result.tracks.length === 0){
